@@ -1,0 +1,80 @@
+{
+  "pilot": "OFDL-PILOT-001",
+  "date": "2026-11-01",
+  "repo": "https://github.com/albanc80/pilot-agentic-orchestration",
+  "package_integrity": {
+    "files": 25,
+    "sha256": "all match"
+  },
+  "gateway": {
+    "version": "OpenClaw 2026.10.9 (8b18b55)",
+    "agents": 17,
+    "roles": 15
+  },
+  "config": {
+    "revisions": [
+      62,
+      63,
+      64,
+      65
+    ],
+    "policy_check": "15/15 roles match"
+  },
+  "sandbox": {
+    "image": "openclaw-sandbox:bookworm-slim",
+    "digest": "sha256:5b12374ae583a2ab18428d1cd483bec6656ffa17459b20f3c1507501c7475dcf",
+    "network": "none",
+    "readonly_root": true,
+    "capdrop": [
+      "ALL"
+    ],
+    "uid": 1000,
+    "specialists": 13
+  },
+  "tests": {
+    "T01_T18": "18/18 pass",
+    "D_proven": [
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D08"
+    ],
+    "D_partial": [
+      "D01",
+      "D06",
+      "D07",
+      "D10"
+    ],
+    "D_untested": [
+      "D09"
+    ]
+  },
+  "e2e": {
+    "plan": "ELIGIBLE",
+    "duplicate": "suppressed",
+    "forged": "DENIED",
+    "audit": [
+      "approval_issued",
+      "mock_executed",
+      "mock_duplicate_suppressed",
+      "execution_denied"
+    ]
+  },
+  "ledger": {
+    "events": 967,
+    "failed": 18,
+    "blocked": 3
+  },
+  "gates": {
+    "gate0": "passed",
+    "gateA": "passed",
+    "gateB": "pending_human"
+  },
+  "residuals": [
+    "admin bypass enabled",
+    "D09 untested",
+    "D10 untested",
+    "D07 not drilled"
+  ]
+}
