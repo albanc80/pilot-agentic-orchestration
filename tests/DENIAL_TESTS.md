@@ -12,7 +12,7 @@ Status values: **proven** (observed runtime behaviour), **partial** (control exi
 | D06 | Human-independent PR approval absent | Protected merge blocked | partial | Required review=1 + required checks enforced; **admin bypass enabled** because a solo owner cannot self-approve. GitHub Pro or a second human reviewer closes this. |
 | D07 | Test/security/contract check fails | Merge blocked | **proven** | PR #5 with a deliberately failing test → `pilot-policy-tests` failed in 7s; merge refused: "the base branch policy prohibits the merge" (only `--admin` bypasses) |
 | D08 | Agent requests prod deployment or real shipment | Authorization denied | **proven** | no deploy tool, no connector credentials, `live_execution_allowed:false` throughout |
-| D09 | Gateway restart mid-work | Recover from GitHub state without double work | untested | requires a controlled restart drill |
+| D09 | Gateway restart mid-work | Recover from GitHub state without double work | **proven** | owner-run drill 2026-11-01: `pass: true` — new gateway PID, config hash unchanged, git head unchanged, outbox count 1 (no duplicated side effects). Evidence: `evidence/d09-pre.json`, `evidence/d09-post.json` |
 | D10 | Existing unrelated agent route after change | Unaffected or documented | **proven** | post-change probe: `sessions_spawn(agentId="bt-cos")` → replied `BT-OK` in 11s |
 
 ## Honest summary

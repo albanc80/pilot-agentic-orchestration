@@ -30,7 +30,7 @@ AUDIT: approval_issued, mock_executed, mock_duplicate_suppressed, execution_deni
 
 ## Residual risks
 1. GitHub admin bypass is enabled (solo owner cannot self-approve). Real enforcement needs GitHub Pro or a second human reviewer (D06).
-2. D09 restart-recovery is untested (needs an owner-controlled restart). D07 and D10 are now proven.
+2. D09 restart-recovery is proven (owner-run drill, `pass: true`). D07 and D10 are proven.
 3. Sandbox image is locally built and unpinned by digest.
 4. Worktrees share one git remote via a single account; branch discipline is procedural.
 5. No real connectors, by design.
