@@ -25,8 +25,8 @@
 ## Residual risks
 1. **D06 partial:** GitHub admin bypass on (solo owner cannot self-approve). Fix: GitHub Pro or second reviewer.
 2. **D09 untested:** restart-recovery drill requires an owner-controlled gateway restart.
-3. **D10 partial:** no post-change regression probe for unrelated agents (bt-cos untouched by config).
-4. **D07 partial:** failing-check block not drilled.
+3. **D10 proven:** post-change probe on bt-cos returned BT-OK.
+4. **D07 proven:** red PR #5 blocked by branch policy; admin bypass is the only way through — same root cause as D06.
 5. Image is locally built, now pinned by digest.
 6. Worktree branch discipline is procedural; single GitHub account.
 
