@@ -1,0 +1,23 @@
+name: main-guard
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  pr-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const commits = context.payload.commits || [];
+            if (commits.length === 0) return;
+            for (const c of commits) {
+              const {data} = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+                owner: context.repo.owner, repo: context.repo.repo, commit_sha: c.id });
+              if (!data.some(p => p.merged_at)) {
+                core.setFailed('Direct push to main: ' + c.id + ' has no merged PR');
+              }
+            }
