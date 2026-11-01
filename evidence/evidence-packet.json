@@ -40,15 +40,14 @@
       "D05",
       "D07",
       "D08",
+      "D09",
       "D10"
     ],
     "D_partial": [
       "D01",
       "D06"
     ],
-    "D_untested": [
-      "D09"
-    ]
+    "D_untested": []
   },
   "e2e": {
     "plan": "ELIGIBLE",

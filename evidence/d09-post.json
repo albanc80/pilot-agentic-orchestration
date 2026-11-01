@@ -1,0 +1,26 @@
+{
+  "before": {
+    "at": "2026-11-01T19:33:55.173282+00:00",
+    "git_head": "2b413efa26ba98a322e3e536a51cd66f0d7aae2a",
+    "config_sha256": "d037f8df8e164d9f0e5734d473bcc5e9ecfdc8d3fe2fbbe9d5c5fce57435b2c6",
+    "gateway_pid": "379736",
+    "sandbox_containers": 2,
+    "outbox_count": 1
+  },
+  "after": {
+    "at": "2026-11-01T19:34:31.837548+00:00",
+    "git_head": "2b413efa26ba98a322e3e536a51cd66f0d7aae2a",
+    "config_sha256": "d037f8df8e164d9f0e5734d473bcc5e9ecfdc8d3fe2fbbe9d5c5fce57435b2c6",
+    "gateway_pid": "683796",
+    "version": "OpenClaw 2026.10.9 (8b18b55)",
+    "sandbox_containers": 2,
+    "outbox_count": 1
+  },
+  "checks": {
+    "gateway_restarted": true,
+    "config_unchanged": true,
+    "git_head_unchanged": true,
+    "outbox_unchanged": true
+  },
+  "pass": true
+}
