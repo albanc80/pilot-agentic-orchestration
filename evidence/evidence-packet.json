@@ -81,9 +81,9 @@
     "enforce_admins": true,
     "reviews": 1,
     "checks": [
-      "pilot-policy-tests",
-      "main-guard"
+      "pilot-policy-tests"
     ],
-    "reviewer": "ilbambinomx"
+    "reviewer": "ilbambinomx",
+    "main_guard": "push-only detective control (not a PR gate)"
   }
 }
