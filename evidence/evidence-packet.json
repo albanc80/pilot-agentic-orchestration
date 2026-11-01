@@ -38,14 +38,14 @@
       "D03",
       "D04",
       "D05",
+      "D06",
       "D07",
       "D08",
       "D09",
       "D10"
     ],
     "D_partial": [
-      "D01",
-      "D06"
+      "D01"
     ],
     "D_untested": []
   },
@@ -76,5 +76,14 @@
     "D01 procedural",
     "image pinned by digest",
     "single GitHub account"
-  ]
+  ],
+  "protection": {
+    "enforce_admins": true,
+    "reviews": 1,
+    "checks": [
+      "pilot-policy-tests",
+      "main-guard"
+    ],
+    "reviewer": "ilbambinomx"
+  }
 }

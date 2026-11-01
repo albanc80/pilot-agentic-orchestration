@@ -1,10 +1,23 @@
-# D06 — human approval enforcement
+# D06 — human approval enforcement (proven)
 
-Enforcement enabled 2026-11-01 with a second reviewer (`ilbambinomx`) as collaborator (write).
+**Date:** 2026-11-01 · Reviewer: `ilbambinomx` (collaborator, write) · Owner: `albanc80`
 
-Expected behaviour:
-- PRs to `main` require 1 approving review from a different account.
-- Required checks `pilot-policy-tests` and `main-guard` must pass.
-- Administrator bypass is disabled, so the owner cannot merge alone.
+## Configuration
+- required approving reviews: 1
+- enforce_admins: **true**
+- required checks: `pilot-policy-tests`, `main-guard` (strict)
+- linear history, no force-push, no deletions
 
-This file is the carrier for the enforcement proof.
+## Observed on PR #10
+```
+reviewDecision: REVIEW_REQUIRED
+
+$ gh pr merge --squash
+X ... is not mergeable: the base branch policy prohibits the merge.
+
+$ gh pr merge --squash --admin
+GraphQL: At least 1 approving review is required by reviewers with write access.
+         Required status check "main-guard" is expected.
+```
+
+**Conclusion:** no single account — including the owner administrator — can merge to `main` without an independent approval and green checks.
