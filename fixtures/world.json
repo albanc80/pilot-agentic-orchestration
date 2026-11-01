@@ -1,0 +1,55 @@
+{
+  "assets": {
+    "ASSET-1": {
+      "sku": "PUMP-SEAL-42",
+      "unit": "ea"
+    }
+  },
+  "stock": [
+    {
+      "depot_id": "D1",
+      "sku": "PUMP-SEAL-42",
+      "quantity": 10,
+      "observed_at": "__now-10m__",
+      "serviceable": true,
+      "maintenance_hold": false
+    },
+    {
+      "depot_id": "D2",
+      "sku": "PUMP-SEAL-42",
+      "quantity": 3,
+      "observed_at": "__now-5m__",
+      "serviceable": true,
+      "maintenance_hold": false
+    }
+  ],
+  "certifications": {
+    "ASSET-1": "__now+90d__"
+  },
+  "routes": [
+    {
+      "depot_id": "D1",
+      "destination": "ROTTERDAM",
+      "transit_days": 4,
+      "mock_trade_clearance": true,
+      "mock_route_eligible": true
+    },
+    {
+      "depot_id": "D2",
+      "destination": "ROTTERDAM",
+      "transit_days": 3,
+      "mock_trade_clearance": true,
+      "mock_route_eligible": true
+    }
+  ],
+  "manufacturing": {
+    "PUMP-SEAL-42": {
+      "available": true,
+      "lead_days": 21,
+      "advisory_only": true
+    }
+  },
+  "connector_status": {
+    "erp": "ok"
+  }
+}
