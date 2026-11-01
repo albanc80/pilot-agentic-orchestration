@@ -1,0 +1,27 @@
+name: pilot-policy-tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    name: pilot-policy-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4 # For enterprise use, pin to reviewed full commit SHA
+        with:
+          persist-credentials: false
+      - name: Configure Python
+        uses: actions/setup-python@v5 # For enterprise use, pin to reviewed full commit SHA
+        with:
+          python-version: '3.11'
+      - name: Check artifact consistency
+        run: python scripts/validate_contracts.py contracts/examples/delivery-contract.json contracts/examples/task-packet.json contracts/examples/evidence-packet.json
+      - name: Run policy unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile Python
+        run: python -m compileall -q pilot scripts tests

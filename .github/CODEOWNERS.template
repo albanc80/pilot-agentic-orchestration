@@ -1,0 +1,6 @@
+# Replace owner with actual human GitHub identity/team and rename to CODEOWNERS
+# Use a human with write/admin permissions, not the autonomous agent identity.
+* @YOUR_GITHUB_USERNAME
+/.github/ @YOUR_GITHUB_USERNAME
+/config/ @YOUR_GITHUB_USERNAME
+/policy/ @YOUR_GITHUB_USERNAME

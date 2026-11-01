@@ -1,0 +1,19 @@
+{
+  "type": "TaskPacket",
+  "schema_version": "1.0",
+  "project_id": "OFDL-PILOT-001",
+  "contract_version": 1,
+  "task_id": "OFDL-ENG-001",
+  "assigned_role": "backend_engineer",
+  "owner_role": "pod_lead",
+  "goal": "Implement deterministic event eligibility and mock fulfillment planning logic.",
+  "source_requirements": ["REQ-01", "REQ-02"],
+  "dependencies": [],
+  "authorized_tools": ["sandbox-read", "sandbox-write", "sandbox-exec-local"],
+  "denied_tools": ["gateway", "production-connectors", "customer-messaging"],
+  "outputs": ["pilot/plan_delivery.py", "tests/test_pilot.py"],
+  "acceptance": ["unittest passing", "stale and uncertified options blocked"],
+  "timeout_seconds": 900,
+  "max_retries": 1,
+  "status": "READY"
+}

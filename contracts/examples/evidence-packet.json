@@ -1,0 +1,17 @@
+{
+  "type": "EvidencePacket",
+  "schema_version": "1.0",
+  "project_id": "OFDL-PILOT-001",
+  "contract_version": 1,
+  "task_id": "OFDL-ENG-001",
+  "commit_sha": "UNAVAILABLE_PRE_DEPLOYMENT",
+  "pull_request_url": "UNAVAILABLE_PRE_DEPLOYMENT",
+  "ci_status": "NOT_RUN_ON_GITHUB",
+  "local_unit_test_status": "PENDING",
+  "qa_reviewer": "UNASSIGNED",
+  "security_reviewer": "UNASSIGNED",
+  "findings": [],
+  "residual_risk": ["No deployed OpenClaw/GitHub integration yet", "No real-system connectivity"],
+  "approval_reference": "NONE",
+  "status": "DRAFT_NOT_APPROVED"
+}

@@ -1,0 +1,27 @@
+{
+  "status": "AWAITING_HUMAN_MOCK_APPROVAL",
+  "mock_only": true,
+  "live_execution_allowed": false,
+  "request_id": "DEMAND-BR-0001",
+  "plan_id": "MOCKPLAN-69d407a3286d0647",
+  "selected_scenario": {
+    "depot_id": "HOUSTON-TX",
+    "destination_region": "BR",
+    "sku": "MWD-PULSER-100",
+    "quantity": 1,
+    "eta": "2026-11-04T12:00:00+00:00",
+    "cost_usd": 3500
+  },
+  "eligible_scenario_count": 1,
+  "policy": {
+    "max_insight_age_minutes": 30,
+    "min_confidence": 0.75,
+    "max_stock_age_minutes": 60
+  },
+  "provenance": {
+    "insight_source": "MOCK_TOOL_TELEMETRY",
+    "asset_id": "TOOL-A100",
+    "insight_observed_at": "2026-10-31T11:48:00Z"
+  },
+  "next_action": "HUMAN_APPROVAL_OF_MOCK_EXECUTION_ONLY"
+}

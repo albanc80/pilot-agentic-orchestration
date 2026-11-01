@@ -1,0 +1,34 @@
+// REVIEW ONLY: An illustrative CONFIG FRAGMENT, not a standalone openclaw.json.
+// Exact IDs unknown, and some properties are Gateway-wide. Do not apply until:
+// - installed CLI schema/version and agent registry verified;
+// - expected impact on other agents analyzed;
+// - protected backup + user approval obtained.
+// Generate a version with your actual agent IDs using scripts/render_agent_overlay.py.
+{
+  tools: {
+    // Global: could alter other agents' access; review existing workloads.
+    sessions: { visibility: "tree" },
+    // Must include ALL 15 participating IDs. A missing/empty allowlist can
+    // unintentionally revert to allow-all; do not leave as [].
+    agentToAgent: { enabled: true, allow: ["fdu-outcome-lead", "eng-pod-lead", "...each-other-13-ids..."] }
+  },
+  agents: {
+    entries: {
+      "fdu-outcome-lead": {
+        sandbox: { mode: "off" }, // communication-only lead; sandbox clamp would otherwise block cross-lead send
+        subagents: { requireAgentId: true, allowAgents: ["fdu-engineer", "domain-specialist", "data-designer", "fdu-architect", "ai-specialist"], maxConcurrent: 3, maxChildrenPerAgent: 3, maxSpawnDepth: 1, runTimeoutSeconds: 900 },
+        tools: { agentToAgent: { send: ["eng-pod-lead"] }, allow: ["agents_list", "sessions_spawn", "sessions_send", "sessions_list", "sessions_history", "session_status"], deny: ["read", "write", "edit", "apply_patch", "exec", "process", "browser", "gateway", "cron", "nodes"] }
+      },
+      "eng-pod-lead": {
+        sandbox: { mode: "off" }, // communication-only lead; sandbox clamp would otherwise block cross-lead send
+        subagents: { requireAgentId: true, allowAgents: ["security-engineer", "qa-engineer", "integration-engineer", "frontend-engineer", "data-engineer", "devsecops-engineer", "backend-engineer", "engineering-architect"], maxConcurrent: 3, maxChildrenPerAgent: 3, maxSpawnDepth: 1, runTimeoutSeconds: 900 },
+        tools: { agentToAgent: { send: ["fdu-outcome-lead"] }, allow: ["agents_list", "sessions_spawn", "sessions_send", "sessions_list", "sessions_history", "session_status"], deny: ["read", "write", "edit", "apply_patch", "exec", "process", "browser", "gateway", "cron", "nodes"] }
+      },
+      // Every specialist: sandbox {mode:"all", backend:"docker", scope:"session", workspaceAccess:"none", docker:{network:"none"}}, subagents { allowAgents: [], requireAgentId: true }
+      // and tools.agentToAgent.send: [] and deny high-privilege control tools.
+      // Engineer GitHub credential access in sandbox is NOT enabled (default false).
+      // Mandatory live test: both unsandboxed, non-executing leads can sessions_send;
+      // all sandboxed specialists cannot escape own task tree.
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "image": "openclaw-sandbox:bookworm-slim",
+  "leads": [
+    "fdu-outcome-lead",
+    "eng-lead"
+  ],
+  "roles": {
+    "fdu-outcome-lead": {
+      "team": "FDU",
+      "spawn": [
+        "fdu-engineer",
+        "fdu-domain-specialist",
+        "fdu-data-designer",
+        "fdu-architect",
+        "fdu-ai-specialist"
+      ],
+      "exec": "approval",
+      "sandbox": false
+    },
+    "fdu-engineer": {
+      "team": "FDU",
+      "spawn": [],
+      "exec": "sandbox",
+      "sandbox": true
+    },
+    "fdu-domain-specialist": {
+      "team": "FDU",
+      "spawn": [],
+      "exec": "deny",
+      "sandbox": true
+    },
+    "fdu-data-designer": {
+      "team": "FDU",
+      "spawn": [],
+      "exec": "deny",
+      "sandbox": true
+    },
+    "fdu-architect": {
+      "team": "FDU",
+      "spawn": [],
+      "exec": "deny",
+      "sandbox": true
+    },
+    "fdu-ai-specialist": {
+      "team": "FDU",
+      "spawn": [],
+      "exec": "deny",
+      "sandbox": true
+    },
+    "eng-lead": {
+      "team": "ENG",
+      "spawn": [
+        "eng-architect",
+        "eng-backend",
+        "eng-frontend",
+        "eng-integrator",
+        "eng-data",
+        "eng-devsecops",
+        "eng-qa",
+        "eng-security"
+      ],
+      "exec": "approval",
+      "sandbox": false
+    },
+    "eng-architect": {
+      "team": "ENG",
+      "spawn": [],
+      "exec": "deny",
+      "sandbox": true
+    },
+    "eng-backend": {
+      "team": "ENG",
+      "spawn": [],
+      "exec": "sandbox",
+      "sandbox": true
+    },
+    "eng-frontend": {
+      "team": "ENG",
+      "spawn": [],
+      "exec": "sandbox",
+      "sandbox": true
+    },
+    "eng-integrator": {
+      "team": "ENG",
+      "spawn": [],
+      "exec": "sandbox",
+      "sandbox": true
+    },
+    "eng-data": {
+      "team": "ENG",
+      "spawn": [],
+      "exec": "sandbox",
+      "sandbox": true
+    },
+    "eng-devsecops": {
+      "team": "ENG",
+      "spawn": [],
+      "exec": "sandbox",
+      "sandbox": true
+    },
+    "eng-qa": {
+      "team": "ENG",
+      "spawn": [],
+      "exec": "sandbox",
+      "sandbox": true
+    },
+    "eng-security": {
+      "team": "ENG",
+      "spawn": [],
+      "exec": "sandbox",
+      "sandbox": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "GLOBAL-BRAZIL-MOCK-001",
+  "synthetic": true,
+  "insight": {
+    "source": "MOCK_TOOL_TELEMETRY",
+    "asset_id": "TOOL-A100",
+    "event_type": "RUL_REPLENISHMENT_ALERT",
+    "observed_at": "2026-10-31T11:48:00Z",
+    "confidence": 0.94,
+    "asset_identity_verified": true,
+    "unit_normalized": true
+  },
+  "demand": {
+    "request_id": "DEMAND-BR-0001",
+    "sku": "MWD-PULSER-100",
+    "quantity": 1,
+    "destination_region": "BR",
+    "customer_site": "MOCK-RIG-OFFSHORE-BRAZIL",
+    "need_by": "2026-11-06T18:00:00Z"
+  },
+  "depots": [
+    {
+      "depot_id": "HOUSTON-TX",
+      "region": "US",
+      "stock_as_of": "2026-10-31T11:58:00Z",
+      "inventory": [{"sku": "MWD-PULSER-100", "quantity_available": 2, "serviceable": true, "maintenance_hold": false, "cert_valid_until": "2026-12-31T00:00:00Z"}],
+      "routes": [{"destination_region": "BR", "transit_days": 4, "cost_usd": 3500, "mock_trade_clearance": true, "mock_route_eligible": true}]
+    },
+    {
+      "depot_id": "ABERDEEN-UK",
+      "region": "GB",
+      "stock_as_of": "2026-10-31T11:55:00Z",
+      "inventory": [{"sku": "MWD-PULSER-100", "quantity_available": 1, "serviceable": true, "maintenance_hold": true, "cert_valid_until": "2026-12-31T00:00:00Z"}],
+      "routes": [{"destination_region": "BR", "transit_days": 3, "cost_usd": 6000, "mock_trade_clearance": true, "mock_route_eligible": true}]
+    }
+  ],
+  "manufacturing": {"fallback_possible": true, "location": "MOCK-MANUFACTURING-TX", "lead_days": 12}
+}

@@ -1,0 +1,31 @@
+{
+  "type": "DeliveryContract",
+  "schema_version": "1.0",
+  "project_id": "OFDL-PILOT-001",
+  "contract_version": 1,
+  "title": "Oilfield Equipment Delivery Orchestrator — Mock-only vertical slice",
+  "owner_role": "fdu_outcome_lead",
+  "engineering_owner_role": "pod_lead",
+  "business_problem": "Tool health signals and fulfillment planning are handled in disconnected operational and enterprise systems.",
+  "user": "Global fulfillment planner",
+  "outcome": "Reduce time to generate an eligible, traceable supply plan without waiving safety, serviceability or trade controls.",
+  "baseline": "UNMEASURED",
+  "target": "Demonstrate complete simulated traceable planning with no prohibited actions and zero duplicate effects.",
+  "measurement": "Time between mock demand event and eligible draft plan; percent of negative cases blocked.",
+  "scope": ["synthetic events", "read-only mock inventory and maintenance", "cross-border mock route", "deterministic policy", "single planning agent", "mock dispatch approval"],
+  "exclusions": ["real ERP/CMMS/MES/TMS writes", "customer commitments", "purchasing", "real exports", "real safety actions"],
+  "requirements": [
+    {"id": "REQ-01", "text": "Reject stale, ambiguous or low-confidence operational insight.", "acceptance_criterion": "A stale or low-confidence fixture produces BLOCKED and no side effect."},
+    {"id": "REQ-02", "text": "Choose only certified and serviceable stock and cleared transportation route.", "acceptance_criterion": "A held asset or uncleared trade route cannot produce a plan."},
+    {"id": "REQ-03", "text": "Require human authorization before mock fulfillment event.", "acceptance_criterion": "Missing or mismatched approval results in no recorded mock execution."},
+    {"id": "REQ-04", "text": "Block duplicate execution.", "acceptance_criterion": "Repeated mock execution results in exactly one side effect."}
+  ],
+  "architecture_refs": ["docs/architecture.md"],
+  "risk_class": "ENTERPRISE_DESIGN_MOCK_ONLY",
+  "authorized_actions": ["LOCAL_READ", "LOCAL_TEST", "MOCK_PLAN", "MOCK_EXECUTE_WITH_HUMAN_APPROVAL"],
+  "prohibited_actions": ["LIVE_TRANSACTION", "PRODUCTION_DEPLOY", "AUTONOMOUS_MERGE"],
+  "dependencies": ["Python 3.10+", "local sandbox", "GitHub protected branch for deployment"],
+  "decision_ids": ["ADR-001"],
+  "human_approval": "REQUIRED_BEFORE_MATERIAL_CONFIG_OR_MERGE_OR_SHARED_RELEASE",
+  "status": "PROPOSED"
+}
