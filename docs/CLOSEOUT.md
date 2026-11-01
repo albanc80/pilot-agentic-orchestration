@@ -1,7 +1,7 @@
 # Closeout — OFDL-PILOT-001
 
 **Date:** 2026-11-01 · **Repo:** https://github.com/albanc80/pilot-agentic-orchestration
-**Disposition:** pilot complete, mock-only, Gate B pending human sign-off.
+**Disposition:** pilot complete, mock-only, Gate B approved 2026-11-01.
 
 ## What was built
 1. **15-role orchestration** on the existing Gateway — no new agents, canonical matrix in `config/policy-matrix.json`, machine-checked by `scripts/check_policy.py`.
@@ -20,7 +20,7 @@
 |---|---|
 | 0 — config | passed (revisions 62–65, backups retained) |
 | A — build authorization | passed (contract v1.0, ADR-001) |
-| B — merge/release | **pending** — human sign-off on residual risks |
+| B — merge/release | **approved** 2026-11-01 by Beto (gateway owner) |
 
 ## Residual risks
 1. **D06 partial:** GitHub admin bypass on (solo owner cannot self-approve). Fix: GitHub Pro or second reviewer.

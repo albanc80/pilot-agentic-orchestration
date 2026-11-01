@@ -69,12 +69,13 @@
   "gates": {
     "gate0": "passed",
     "gateA": "passed",
-    "gateB": "pending_human"
+    "gateB": "approved_2026-11-01_beto"
   },
   "residuals": [
-    "admin bypass enabled",
-    "D09 untested",
-    "D10 untested",
-    "D07 not drilled"
+    "D06 admin bypass (needs second reviewer)",
+    "D09 restart drill pending owner restart",
+    "D01 procedural",
+    "image pinned by digest",
+    "single GitHub account"
   ]
 }

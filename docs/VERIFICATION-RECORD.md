@@ -26,7 +26,7 @@ AUDIT: approval_issued, mock_executed, mock_duplicate_suppressed, execution_deni
 ## Gate evidence
 - Gate 0: config revisions 62–65 accepted; backups present; policy matrix check passes 15/15 roles.
 - Gate A: contract version 1.0 fixed; ADR-001 in `docs/`.
-- Gate B: **not yet granted** — requires human review of the final PR and acceptance of residual risks below.
+- Gate B: **approved 2026-11-01** by Beto (gateway owner), with residual risks accepted.
 
 ## Residual risks
 1. GitHub admin bypass is enabled (solo owner cannot self-approve). Real enforcement needs GitHub Pro or a second human reviewer (D06).
