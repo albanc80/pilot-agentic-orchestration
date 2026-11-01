@@ -24,4 +24,4 @@ python3 scripts/ledger.py --summary    # gateway audit_events -> JSONL
 ```
 
 ## Status
-Scaffold seeded from the v1.0 handoff package. No application code written yet; no GitHub remote.
+Pilot complete (mock-only). T01–T18 pass; E2E demo verified; Gate B pending human sign-off. See `docs/CLOSEOUT.md` and `docs/VERIFICATION-RECORD.md`.
