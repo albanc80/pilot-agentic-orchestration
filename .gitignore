@@ -4,3 +4,8 @@ __pycache__/
 .venv/
 *.sqlite
 *.jsonl
+.venv/
+pilot-state/
+*.db
+*.db-wal
+*.db-shm
